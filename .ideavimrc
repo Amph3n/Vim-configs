@@ -1,0 +1,89 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" space as leader key
+let mapleader = " "
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+set ruler
+set number
+set relativenumber
+
+" Turn off error bell
+set vb t_vb=
+
+" Search dont use case sensitive as default
+set ignorecase
+set smartcase
+
+" Use windows clipboard
+set clipboard=unnamedplus
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Enter for create line under
+" Both returns to normal mode
+map <Enter> o<ESC>
+
+"Toggle relative numbers
+nnoremap <leader>lt :set invrelativenumber<CR>
+
+" Remap go definition key
+" [G]oto [S]ource
+map gs <action>(GotoDeclaration)
+
+" Action maps
+" Find Action Id by using: IdeaVim: Track Action IDs
+
+" [T]ab [C]lose
+map <leader>tc <action>(CloseContent)
+
+" Show [A]ctions
+map <leader>a <action>(ShowIntentionActions)
+
+" [H]over info
+map <leader>h <action>(ShowHoverInfo)
+
+" [F]ile [T]ree
+map <C-n> :NERDTree<CR>
+
+" [D]ata[B]ase view
+map <leader>db <action>(ActivateDatabaseToolWindow)
+
+" Find [F]ile [P]lacement
+map <leader>fp <action>(SelectInProjectView)
+
+" [R]ename [T]ext
+map <leader>rt <action>(RenameElement)
+
+" [G]it [B]lame
+map <leader>gb <action>(Annotate)
+
+" [P]HP [D]oc block
+map <leader>pd <Action>PhpGenerateDocComment
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+set NERDTree
+set surround
+set easymotion
+set quickscope
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+let g:qs_primary_color = '#ff0000'
+let g:qs_secondary_color = '#ff00ff'
