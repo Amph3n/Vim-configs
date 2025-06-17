@@ -71,6 +71,9 @@ map <leader>gb <action>(Annotate)
 " [P]HP [D]oc block
 map <leader>pd <Action>PhpGenerateDocComment
 
+" Map to not overide last yank when replacing text
+map <leader>p, "\"_dP
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
