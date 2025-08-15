@@ -11,8 +11,9 @@ let mapleader = " "
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=10
 set ruler
-set number
-set relativenumber
+
+" Line numbers starting from 1
+set numbers
 
 " Turn off error bell
 set vb t_vb=
@@ -54,25 +55,36 @@ map <leader>a <action>(ShowIntentionActions)
 map <leader>h <action>(ShowHoverInfo)
 
 " [F]ile [T]ree
-map <C-n> :NERDTree<CR>
+" map <C-n> <action>(ActivateProjectToolWindow)
 
 " [D]ata[B]ase view
-map <leader>db <action>(ActivateDatabaseToolWindow)
+" map <leader>db <action>(ActivateDatabaseToolWindow)
 
 " Find [F]ile [P]lacement
 map <leader>fp <action>(SelectInProjectView)
 
-" [R]ename [T]ext
+ "[]Rename [T]ext
 map <leader>rt <action>(RenameElement)
 
 " [G]it [B]lame
 map <leader>gb <action>(Annotate)
 
-" [P]HP [D]oc block
+ "[P]HP [D]oc block
 map <leader>pd <Action>PhpGenerateDocComment
 
-" Map to not overide last yank when replacing text
-map <leader>p, "\"_dP
+" Swap ; and , for repeating f/t motions
+"Normal mode
+nnoremap ; ,
+nnoremap , ;
+"visual mode
+xnoremap ; ,
+xnoremap , ;
+"Operator mode, like d, or y;
+onoremap ; ,
+onoremap , ;
+
+" Search uppercase letters
+nnoremap <leader><leader>u /\u<CR>
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
